@@ -2,8 +2,8 @@
 GIT
 -
 
----
-#### На 3
+<details>
+<summary>На 3</summary>
 
 1. Используем git status:
     ```
@@ -76,10 +76,12 @@ GIT
     git commit -m "Change comment"
      ```
 17. Пушим на githab (*пушил каждый commit*): `git push`
+</details>
 
 ---    
 
-#### 3 с ветками
+<details>
+<summary>На 3 с ветками</summary>
 
 1. Создаем новую ветку: `git branch mybranch`
 2. Смотрим ветки: 
@@ -121,5 +123,173 @@ GIT
     rename from lab9/file1.txt
     rename to lab9/file2.txt
     ```
-16. Файл readme.md в ветке main
+16. Файл `README.md` в ветке mybranch 
 17. Коммитим, пушим
+</details>
+
+---
+
+<summary> На 4</summary>
+
+1. Переключаемся на mybranch: `git switch`
+2. Пишем функцию main:
+   ```c
+    int main() {
+        int a[] = {4, 2, 0, 7, 1, 9, 3};
+        int n = sizeof(a) / sizeof(a[0]);
+        
+        printf("Исходный массив: ");
+        for (int i = 0; i < n; i++) {
+            printf("%d ", a[i]);
+        }
+        printf("\n");
+        
+        quickSort(a, 0, n - 1);
+        
+        printf("Отсортированный массив: ");
+        for (int i = 0; i < n; i++) {
+            printf("%d ", a[i]);
+        }
+        printf("\n");
+        
+        return 0;
+    }
+   ```
+3. git diff: 
+    ```git
+    diff --git a/lab9/sort.c b/lab9/sort.c
+    index 6cf98da..afc026b 100644
+    --- a/lab9/sort.c
+    +++ b/lab9/sort.c
+   ```
+4. git diff --staged пустой
+5. git add sort.c
+6. git diff sort.c пустой
+7. git diff --staged:
+    ```git
+    diff --git a/lab9/sort.c b/lab9/sort.c
+    index 6cf98da..afc026b 100644
+    --- a/lab9/sort.c
+    +++ b/lab9/sort.c
+    ```
+8. Удалил число из массива
+9. git diff:
+    ```git
+    int main() {
+    -    int a[] = {4, 2, 0, 7, 1, 9, 3};
+    +    int a[] = {4, 0, 7, 1, 9, 3};
+        int n = sizeof(a) / sizeof(a[0]);
+    ```
+10. git diff --staged:
+    ```git
+    diff --git a/lab9/sort.c b/lab9/sort.c
+    index 6cf98da..afc026b 100644
+    --- a/lab9/sort.c
+    +++ b/lab9/sort.c
+    ```
+11. При изменении в файле меняется git diff. Если добавить изменения в stage, то они появляются в git diff --staged и пропадают из diff.
+12. git status:
+    ```git
+    Changes to be committed:
+    (use "git restore --staged <file>..." to unstage)
+            modified:   lab9/sort.c
+
+    Changes not staged for commit:
+    (use "git add <file>..." to update what will be committed)
+    (use "git restore <file>..." to discard changes in working directory)
+            modified:   lab9/README.md
+            modified:   lab9/sort.c
+    ```
+13. Отменяем индексацию изменения: `git restore --staged sort.c`
+14. git status:
+    ```git
+    Changes not staged for commit:
+    (use "git add <file>..." to update what will be committed)
+    (use "git restore <file>..." to discard changes in working directory)
+            modified:   lab9/README.md
+            modified:   lab9/sort.c
+    ```
+15. Add & Commit
+16. git log:
+    ```git
+    commit a0c2b398ef87b36490ad49868c02907af2c01079 (HEAD -> mybranch)
+    Author: Raitar <raitar239@gmail.com>
+    Date:   Mon Nov 24 10:47:34 2025 +0700
+
+        Добавлена функция main
+    ```
+17. Добавляем `printf("hello git\n");`
+
+18. <details>
+    <summary>sort.c</summary>
+
+    ```c
+    // Quick sort 
+    #include <stdio.h>
+
+    void quickSort(int arr[], int low, int high) {
+        if (low < high) {
+            int pivot = arr[high];
+            int i = low - 1;
+            
+            for (int j = low; j < high; j++) {
+                if (arr[j] < pivot) {
+                    i++;
+                    int temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+            
+            int temp = arr[i + 1];
+            arr[i + 1] = arr[high];
+            arr[high] = temp;
+            
+            int pi = i + 1;
+            
+            quickSort(arr, low, pi - 1);
+            quickSort(arr, pi + 1, high);
+        }
+    }
+
+    int main() {
+        printf("hello git\n");
+
+        int a[] = {4, 0, 7, 1, 9, 3};
+        int n = sizeof(a) / sizeof(a[0]);
+        
+        printf("Исходный массив: ");
+        for (int i = 0; i < n; i++) {
+            printf("%d ", a[i]);
+        }
+        printf("\n");
+        
+        quickSort(a, 0, n - 1);
+        
+        printf("Отсортированный массив: ");
+        for (int i = 0; i < n; i++) {
+            printf("%d ", a[i]);
+        }
+        printf("\n");
+        
+        return 0;
+    }
+    ```
+    </details>
+19. git status:
+    ```git
+    Changes not staged for commit:
+    (use "git add <file>..." to update what will be committed)
+    (use "git restore <file>..." to discard changes in working directory)
+            modified:   lab9/README.md
+            modified:   lab9/sort.c
+    ```
+20. git restore sort.c
+21. В файле sort.c пропал printf
+22. git status:
+    ```git
+    Changes not staged for commit:
+    (use "git add <file>..." to update what will be committed)
+    (use "git restore <file>..." to discard changes in working directory)
+            modified:   README.md
+    ```
