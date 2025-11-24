@@ -129,6 +129,7 @@ GIT
 
 ---
 
+<details>
 <summary> На 4</summary>
 
 1. Переключаемся на mybranch: `git switch`
@@ -293,3 +294,5 @@ GIT
     (use "git restore <file>..." to discard changes in working directory)
             modified:   README.md
     ```
+23. Commit & push
+</details>
