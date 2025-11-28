@@ -299,6 +299,7 @@ GIT
 
 ---
 
+<details>
 <summary>На 4*</summary>
 
 1-2. Create, add, commit.
@@ -318,4 +319,30 @@ GIT
 * 92505a8 (mybranch) Add content to greeting.txt
 * f4b3552 Add file greeting.txt
 ```
-10. 
+10-11.  Switch, `type greetings.txt`: hello
+12. HELLO/hello
+13. `git merge feature/uppercase`: Already up to date.
+14. `type greeting.txt`: HELLO
+15. `git branch -d feature/uppercase`
+16. `git merge mybranch`
+17. logs:
+```git
+*   5417670 (HEAD -> mybranch) Merge branch 'feature/uppercase' into mybranch
+|\
+| * 3d40d59 Add README
+| * 120e6cc Change to HELLO
+|/  
+```
+18-19. Push all
+</details>
+
+---
+
+<summary>На 5</summary>
+
+1. Branch, switch to branch1
+2. `echo "This is a relevant fact" > file.txt`
+3. Commit Create file.txt
+4. `echo "This is an indispensable truth!" > file.txt`
+5. Commit
+6. 
