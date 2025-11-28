@@ -396,4 +396,15 @@ Unmerged paths:
 5. Commit
 6. Switch, change `mergesort.py`
 7. Commit
-8. 
+8-9. logs:
+```git
+* 17c9268 (HEAD -> main) Change mergesort.py2
+* ab2f20f Create mergesort.py
+```
+   branch:
+```git
+  Mergesort-Impl
+  branch1
+* main
+  mybranch
+```
