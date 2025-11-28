@@ -353,3 +353,32 @@ GIT
 | * 1a1aeea Create file.txt
 ```
 7. `git merge branch1`
+8. status:
+```git
+git status
+On branch main
+Your branch is ahead of 'origin/main' by 3 commits.
+  (use "git push" to publish your local commits)
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+        new file:   file1.txt
+        new file:   greeting.txt
+        modified:   sort.c
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   README.md
+        both added:      file.txt
+```
+9. Чиним
+10. logs:
+```git
+* f585d3c (HEAD -> main) Readme
+* 1a62d42 Create file.txt2
+* f6bb720 (origin/main, origin/HEAD) Create file2.txt
+```
+11. Push
