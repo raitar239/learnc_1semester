@@ -345,4 +345,11 @@ GIT
 3. Commit Create file.txt
 4. `echo "This is an indispensable truth!" > file.txt`
 5. Commit
-6. 
+6. logs:
+```git
+* 1a62d42 (HEAD -> main) Create file.txt2
+* f6bb720 (origin/main, origin/HEAD) Create file2.txt
+| * a4dd083 (branch1) readme
+| * 1a1aeea Create file.txt
+```
+7. `git merge branch1`
