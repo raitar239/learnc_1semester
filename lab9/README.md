@@ -320,4 +320,16 @@ GIT
 ```
 10-11.  Switch, `type greetings.txt`: hello
 12. HELLO/hello
-13. 
+13. `git merge feature/uppercase`: Already up to date.
+14. `type greeting.txt`: HELLO
+15. `git branch -d feature/uppercase`
+16. `git merge mybranch`
+17. logs:
+```git
+*   5417670 (HEAD -> mybranch) Merge branch 'feature/uppercase' into mybranch
+|\
+| * 3d40d59 Add README
+| * 120e6cc Change to HELLO
+|/  
+```
+18. 
