@@ -81,7 +81,7 @@ GIT
 ---    
 
 <details>
-<summary>На 3 с ветками</summary>
+<summary>На 3*</summary>
 
 1. Создаем новую ветку: `git branch mybranch`
 2. Смотрим ветки: 
@@ -388,6 +388,7 @@ Unmerged paths:
 
 ---
 
+<details>
 <summary>На 5*</summary>
 
 1-2. Create, add, commit `mergesort.py` 
@@ -410,3 +411,5 @@ Unmerged paths:
 ```
 10. Merge
 11-12. push
+
+</details>
