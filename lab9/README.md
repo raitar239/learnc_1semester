@@ -338,6 +338,7 @@ GIT
 
 ---
 
+<details>
 <summary>На 5</summary>
 
 1. Branch, switch to branch1
@@ -382,3 +383,11 @@ Unmerged paths:
 * f6bb720 (origin/main, origin/HEAD) Create file2.txt
 ```
 11. Push
+
+</details>
+
+---
+
+<summary>На 5*</summary>
+
+1-2. Create, add, commit mergesort.py 
